@@ -50,6 +50,7 @@
       disabled
     />
     <link rel="stylesheet" href="css/style-switcher.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <!-- ===== Main Container Start ===== -->
@@ -439,7 +440,7 @@
               <div class="portfolio-item padd-15">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
-                    <img src="/images/portfolio/portfolio-1.jpg" alt="" />
+                    <img src="/images/portfolio-1.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -448,7 +449,7 @@
               <div class="portfolio-item padd-15">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
-                    <img src="/images/portfolio/portfolio-2.jpg" alt="" />
+                    <img src="/images/portfolio-2.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -457,7 +458,7 @@
               <div class="portfolio-item padd-15">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
-                    <img src="/images/portfolio/portfolio-3.jpg" alt="" />
+                    <img src="/images/portfolio-3.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -466,7 +467,7 @@
               <div class="portfolio-item padd-15">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
-                    <img src="/images/portfolio/portfolio-4.jpg" alt="" />
+                    <img src="/images/portfolio-4.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -475,7 +476,7 @@
               <div class="portfolio-item padd-15">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
-                    <img src="/images/portfolio/portfolio-5.jpg" alt="" />
+                    <img src="/images/portfolio-5.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -484,7 +485,7 @@
               <div class="portfolio-item padd-15">
                 <div class="portfolio-item-inner shadow-dark">
                   <div class="portfolio-img">
-                    <img src="/images/portfolio/portfolio-6.jpg" alt="" />
+                    <img src="/images/portfolio-6.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -587,7 +588,7 @@
                         <textarea
                           class="form-control"
                           name="msg"
-                          id=""
+                          id="message"
                           placeholder="Message"
                         ></textarea>
                       </div>
@@ -643,15 +644,22 @@
     <script>
       function sendemail() {
         Email.send({
-          // SecureToken: "69e43c0c-248a-455c-9e62-23f6718522ca",
           Host: "smtp.elasticemail.com",
-          Username: "shiningsuraj168@gmail.com",
-          Password: "C962B1C0867F309EEB2D434C32C6630A567A",
-          To: "vivekimmortal168@gmail.com",
-          From: document.getElementById("email").value,
+          Username: "shining.suraj16@gmail.com",
+          Password: "B072CAB410E398225B78E5B89083E226AF6F",
+          To: "shining.suraj16@gmail.com",
+          From: "shining.suraj16@gmail.com",
           Subject: "This is the subject",
-          Body: "Heloo i am user",
-        }).then((message) => alert(message));
+          Body:
+            "Name: " +
+            document.getElementById("name").value +
+            "<br> Email:" +
+            document.getElementById("email").value +
+            "<br> Phone no:" +
+            document.getElementById("phone").value +
+            "<br> Message:" +
+            document.getElementById("message").value,
+        }).then((message) => alert("Message Sent Successfully"));
       }
     </script>
   </body>
